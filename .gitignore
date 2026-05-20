@@ -1,0 +1,7 @@
+backend/target/
+backend/uploads/
+backend/tmp/
+backend/**/.tmp/
+backend/*.log
+
+# Rust keeps build artifacts; ignore common caches.
