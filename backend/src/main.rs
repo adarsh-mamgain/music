@@ -602,8 +602,8 @@ async fn main() {
     let uploads_dir = uploads_root();
     let _ = fs::create_dir_all(uploads_dir.join("tracks")).await;
 
-    let swagger_ui = SwaggerUi::new("/api-docs/swagger-ui/").url(
-        "/api-docs/openapi.json",
+    let swagger_ui = SwaggerUi::new("/api/docs").url(
+        "/api/docs/openapi.json",
         openapi.clone(),
     );
     let swagger_router: Router<AppState> = Router::from(swagger_ui);
