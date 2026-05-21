@@ -10,8 +10,9 @@ Run:
     HOST=0.0.0.0 PORT=8085 RUST_LOG=info cargo run
 
 Swagger (OpenAPI) for dev:
-- GET /api-docs/swagger-ui/
-- GET /api-docs/openapi.json
+
+- GET /api/docs
+- GET /api/docs/openapi.json
 
 ## Core API
 
@@ -31,10 +32,12 @@ Swagger (OpenAPI) for dev:
 Uploads are size-limited and scanned before accepting.
 
 Environment variables:
-- MAX_AUDIO_BYTES (default: 25 * 1024 * 1024 bytes)
+
+- MAX*AUDIO_BYTES (default: 25 * 1024 \_ 1024 bytes)
 - MUSIC_UPLOADS_DIR (default: uploads/)
 
 Virus scanning:
+
 - Uploads use ClamAV clamscan if it is installed.
 - If clamscan is not available, uploads fail with 503 (safe behavior: we do not pretend to scan).
 
@@ -44,4 +47,3 @@ Use tmux:
 
     tmux new -d -s music-backend 'cd projects/music/backend && HOST=0.0.0.0 PORT=8085 RUST_LOG=info cargo run'
     tmux ls
-
